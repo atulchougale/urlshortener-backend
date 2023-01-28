@@ -1,6 +1,6 @@
 const { nanoid } = require("nanoid");
 const validUrl = require("valid-url");
-const SuperUrlz = require("../../models/urlModes");
+const SuperUrlz = require("../../models/urlModel");
 const User = require("../../models/userModel");
 
 const createShortUrlHandler = async (req, res) => {

@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const signTokenFunc = (payload) => {
+  
   try {
     return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
   } catch (e) {
@@ -9,11 +10,13 @@ const signTokenFunc = (payload) => {
   }
 };
 const verifyTokenFunc = (token) => {
+
   try {
     const isVerified = jwt.verify(token, process.env.JWT_SECRET);
+    // console.log("isVerified",isVerified)
     return isVerified;
   } catch (e) {
-    console.log(e.message, "err in token verify");
+    console.log(e,e.message, "err in token verify");
     return null;
   }
 };

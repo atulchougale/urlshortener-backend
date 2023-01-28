@@ -30,13 +30,15 @@ const forgotPasswordHandler = async (req, res) => {
       { new: true }
     );
     const token = signTokenFunc({ email, id: savedUser._id });
-    const emailPayLoad = `${resetCode} I Have Amnesia ${token}`;
+      // console.log(token,"token");
+    const emailPayLoad = `${resetCode}IHaveAmnesia${token}`;
+      // console.log(emailPayLoad,"emailPayLoad");
     //send mail this payload
     const mailDetails = {
       toAddress: savedUser.email,
       mailSubject: "Password Reset Link",
       mailContent: `Dont worry, just click the following link to reset your password  -   
-        ${process.env.CLIENT_URL_RESETPWD}/${emailPayLoad}`,
+      http://localhost:3000/resetPassword/${emailPayLoad}`,
     };
     const mailResponse = await mailerFunc(mailDetails);
 

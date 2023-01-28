@@ -1,6 +1,6 @@
 //public route
 const router = require("express").Router();
-const SuperUrlz = require("../models/urlModes");
+const SuperUrlz = require("../models/urlModel");
 
 router.get("/:shortId", async (req, res) => {
   const shortId = req.params.shortId;

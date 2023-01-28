@@ -18,7 +18,7 @@ const SuperUrlzSchema = schema(
     },
     user: {
       type: mongoose.Types.ObjectId,
-      ref: "User",
+      ref: "Url_User",
     },
   },
   { timestamps: true }
@@ -26,3 +26,4 @@ const SuperUrlzSchema = schema(
 
 const SuperUrlz = mongoose.model("SuperUrlz",SuperUrlzSchema,"SuperUrlzCollection");
 module.exports = SuperUrlz;
+

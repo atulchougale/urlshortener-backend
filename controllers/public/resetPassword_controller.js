@@ -6,6 +6,7 @@ const { verifyTokenFunc } = require("../../util/tokenFunc");
 const resetPasswordHandler = async (req, res) => {
   const { resetCode, newPassword } = req.body;
   const tokenHeader = req.headers.authorization;
+  // console.log(tokenHeader,"tokenHeader")
   try {
     if (!resetCode || !tokenHeader || !newPassword) {
       return res
@@ -13,7 +14,10 @@ const resetPasswordHandler = async (req, res) => {
         .send({ msg: "No empty values allowed", type: "error" });
     }
     const token = tokenHeader.split(" ")[1];
+  //  console.log(token,"token");
+
     const isTokenFresh = verifyTokenFunc(token);
+    // console.log(isTokenFresh);
     if (!isTokenFresh) {
       return res
         .status(400)

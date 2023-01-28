@@ -1,4 +1,4 @@
-const SuperUrlz = require("../../models/urlModes");
+const SuperUrlz = require("../../models/urlModel");
 
 const getAllUrlHandler = async (req, res) => {
   const { id } = req.userObj;
@@ -14,7 +14,7 @@ const getAllUrlHandler = async (req, res) => {
     );
     res.send({ msg: "Populated Data", type: "success", allUrls });
   } catch (e) {
-    console.log(e.message, " err-in getAllUrl controller");
+    console.log(e,e.message, " err-in getAllUrl controller");
     res
       .status(500)
       .send({ msg: "internal server error,try again", type: "error" });

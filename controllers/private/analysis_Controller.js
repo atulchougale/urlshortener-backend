@@ -1,4 +1,4 @@
-const SuperUrlz = require("../../models/userModel");
+const SuperUrlz = require("../../models/urlModel");
 
 const analysisUrlHandler = async (req, res) => {
   //url created each day per month - return {name:urlname,day:03,month:12,year:2021,week:01} -week need to calucluate based on the day (week1-  0>n<7,week2-7>n<14,week3-14<n>21,week4-n>21)
@@ -16,8 +16,10 @@ const analysisUrlHandler = async (req, res) => {
     // console.log(arr, " arr");
 
     const dataArray = await allUrls.map((doc) => {
-      const createdDateFn = doc.createdAt.toISOString().split("T")[0];
-      const dateArray = createdDateFn.split("-");
+      console.log(doc.createdAt)
+      const createdDateFn = doc.createdAt;
+      console.log(createdDateFn)
+      const dateArray = createdDateFn;
       return {
         urlName: doc.originalUrl,
         shortUrl: doc.shortUrlId,
@@ -32,7 +34,7 @@ const analysisUrlHandler = async (req, res) => {
       dataArray,
     });
   } catch (e) {
-    console.log(e.message, " err-in analysisController");
+    console.log(e,e.message, " err-in analysisController");
     res
       .status(500)
       .send({ msg: "internal server error,try again", type: "error" });
