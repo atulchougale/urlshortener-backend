@@ -10,6 +10,7 @@ const mailerFunc = async (requiredOption) => {
         pass: process.env.SENDER_MAIL_PWD,
       },
     });
+    
 
     const mailOption = {
       from: process.env.SENDER_MAIL_ID,
