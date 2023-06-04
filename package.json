@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JP8433/url-shorner-backend.git"
+    "url": "git+https://github.com/atulchougale/urlshortener-backend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JP8433/url-shorner-backend/issues"
+    "url": "https://github.com/atulchougale/urlshortener-backend/issues"
   },
-  "homepage": "https://github.com/JP8433/url-shorner-backend#readme",
+  "homepage": "https://github.com/atulchougale/urlshortener-backend#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
