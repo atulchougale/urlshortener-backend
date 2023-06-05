@@ -32,7 +32,7 @@ const signupHandler = async (req, res) => {
       toAddress: createdUser.email,
       mailSubject: "Account Activation Link",
       mailContent: `Welcome ${createdUser.name}!, just click the following link to activate your Account  -   
-      http://localhost:3000/emailActivation/${token}`,
+      https://urlshortner-frontend.netlify.app/emailActivation/${token}`,
     };
     await mailerFunc(mailDetails);
 
